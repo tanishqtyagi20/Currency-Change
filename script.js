@@ -1,5 +1,38 @@
 document.getElementById('fetch-rates').addEventListener('click', fetchRates);
 
+const currencyCountries = {
+    USD: 'United States',
+    EUR: 'European Union',
+    GBP: 'United Kingdom',
+    INR: 'India',
+    JPY: 'Japan',
+    CAD: 'Canada',
+    AUD: 'Australia',
+    CHF: 'Switzerland',
+    BRL: 'Brazil',
+    CNY: 'China',
+    CZK: 'Czech Republic',
+    DKK: 'Denmark',
+    HKD: 'Hong Kong',
+    HUF: 'Hungary',
+    IDR: 'Indonesia',
+    ILS: 'Israel',
+    ISK: 'Iceland',
+    KRW: 'South Korea',
+    MXN: 'Mexico',
+    MYR: 'Malaysia',
+    NOK: 'Norway',
+    NZD: 'New Zealand',
+    PHP: 'Philippines',
+    PLN: 'Poland',
+    RON: 'Romania',
+    SEK: 'Sweden',
+    SGD: 'Singapore',
+    THB: 'Thailand',
+    TRY: 'Turkey',
+    ZAR: 'South Africa'
+};
+
 async function fetchRates() {
     const base = document.getElementById('base-currency').value;
     const loading = document.getElementById('loading');
@@ -23,7 +56,8 @@ async function fetchRates() {
 
             ratesContainer.innerHTML = `<h2>Exchange Rates (Base: ${base})</h2>`;
             currencies.forEach(currency => {
-                ratesContainer.innerHTML += `<p>${currency}: ${rates[currency].toFixed(4)}</p>`;
+                const country = currencyCountries[currency] || 'Unknown';
+                ratesContainer.innerHTML += `<p>${currency}: ${rates[currency].toFixed(4)} (${country})</p>`;
             });
         } else {
             ratesContainer.innerHTML = '<p>Error fetching rates.</p>';
