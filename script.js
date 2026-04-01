@@ -55,6 +55,8 @@ async function fetchRates() {
             const currencies = Object.keys(rates);
 
             ratesContainer.innerHTML = `<h2>Exchange Rates (Base: ${base})</h2>`;
+            const baseCountry = currencyCountries[base] || 'Unknown';
+            ratesContainer.innerHTML += `<p>${base}: 1.0000 (${baseCountry})</p>`;
             currencies.forEach(currency => {
                 const country = currencyCountries[currency] || 'Unknown';
                 ratesContainer.innerHTML += `<p>${currency}: ${rates[currency].toFixed(4)} (${country})</p>`;
