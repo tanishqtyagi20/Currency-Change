@@ -19,7 +19,7 @@ async function fetchRates() {
 
         if (data.rates) {
             const rates = data.rates;
-            const currencies = Object.keys(rates).slice(0, 10);
+            const currencies = Object.keys(rates);
 
             ratesContainer.innerHTML = `<h2>Exchange Rates (Base: ${base})</h2>`;
             currencies.forEach(currency => {
