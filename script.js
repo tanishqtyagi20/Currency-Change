@@ -7,6 +7,7 @@ async function fetchRates() {
     const button = document.getElementById('fetch-rates');
 
     button.disabled = true;
+    setTimeout(() => button.disabled = false, 3000);
     loading.style.display = 'block';
     ratesContainer.innerHTML = '';
 
@@ -15,7 +16,6 @@ async function fetchRates() {
         const data = await response.json();
 
         loading.style.display = 'none';
-        button.disabled = false;
 
         if (data.rates) {
             const rates = data.rates;
@@ -30,7 +30,6 @@ async function fetchRates() {
         }
     } catch (error) {
         loading.style.display = 'none';
-        button.disabled = false;
         ratesContainer.innerHTML = '<p>Error fetching rates.</p>';
     }
 }

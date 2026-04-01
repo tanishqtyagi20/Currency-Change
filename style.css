@@ -68,8 +68,7 @@ button:disabled {
 #rates-container p {
     margin: 5px 0;
 }
-
-/* Mobile */
+]
 @media (max-width: 599px) {
     .container {
         padding: 15px;
@@ -84,8 +83,7 @@ button:disabled {
         padding: 8px;
     }
 }
-
-/* Tablet */
+]
 @media (min-width: 600px) {
     .input-group {
         flex-direction: row;
@@ -96,8 +94,7 @@ button:disabled {
         margin-right: 10px;
     }
 }
-
-/* Desktop */
+]
 @media (min-width: 1024px) {
     .container {
         max-width: 1000px;

@@ -26,4 +26,3 @@ This project allows users to view current exchange rates for different currencie
 
 1. Clone the repository
 2. Open index.html in a web browser
-3. Or run a local server: `python3 -m http.server 8000` and open http://localhost:8000
