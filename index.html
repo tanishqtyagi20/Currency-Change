@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurrencyXchange</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CurrencyXchange</h1>
+        <p>Live Currency Exchange Rates</p>
+        <div class="input-group">
+            <label for="base-currency">Base Currency:</label>
+            <select id="base-currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+            </select>
+            <button id="fetch-rates">Get Rates</button>
+        </div>
+        <div id="loading" class="loading">Loading...</div>
+        <div id="rates-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
