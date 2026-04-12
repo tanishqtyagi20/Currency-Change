@@ -10,32 +10,102 @@
     <div class="container">
         <h1>CurrencyXchange</h1>
         <p>Live Currency Exchange Rates</p>
-        <div class="input-group">
-            <label for="base-currency">Base Currency:</label>
-            <select id="base-currency">
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-                <option value="GBP">GBP</option>
-                <option value="INR">INR</option>
-                <option value="JPY">JPY</option>
-                <option value="CAD">CAD</option>
-                <option value="AUD">AUD</option>
-                <option value="CHF">CHF</option>
-                <option value="BRL">BRL</option>
-                <option value="CNY">CNY</option>
-                <option value="CZK">CZK</option>
-                <option value="DKK">DKK</option>
-                <option value="HKD">HKD</option>
-                <option value="HUF">HUF</option>
-                <option value="IDR">IDR</option>
-                <option value="ILS">ILS</option>
-                <option value="ISK">ISK</option>
-                <option value="KRW">KRW</option>
-            </select>
-            <button id="fetch-rates">Get Rates</button>
+        
+        <div id="api-check" class="api-check">
+            <div class="dot-spinner" id="dot-spinner"></div>
+            <span id="api-check-text">Checking if API working...</span>
         </div>
+
+        <div id="main-content" class="main-content" style="display:none;">
+        
+        <div class="section-group">
+            <div class="input-group">
+                <label for="base-currency">Base Currency</label>
+                <div class="input-flex">
+                    <select id="base-currency">
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="INR">INR</option>
+                        <option value="JPY">JPY</option>
+                        <option value="CAD">CAD</option>
+                        <option value="AUD">AUD</option>
+                        <option value="CHF">CHF</option>
+                        <option value="BRL">BRL</option>
+                        <option value="CNY">CNY</option>
+                        <option value="CZK">CZK</option>
+                        <option value="DKK">DKK</option>
+                        <option value="HKD">HKD</option>
+                        <option value="HUF">HUF</option>
+                        <option value="IDR">IDR</option>
+                        <option value="ILS">ILS</option>
+                        <option value="ISK">ISK</option>
+                        <option value="KRW">KRW</option>
+                    </select>
+                    <button id="fetch-rates">Get Rates</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-group">
+            <div class="convert-group">
+                <label>Convert Currency</label>
+                <div class="convert-flex">
+                    <input type="number" id="amount" value="1" min="0" step="0.01" placeholder="Amount">
+                    <select id="target-currency">
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                        <option value="GBP">GBP</option>
+                        <option value="INR">INR</option>
+                        <option value="JPY">JPY</option>
+                        <option value="CAD">CAD</option>
+                        <option value="AUD">AUD</option>
+                        <option value="CHF">CHF</option>
+                        <option value="BRL">BRL</option>
+                        <option value="CNY">CNY</option>
+                        <option value="CZK">CZK</option>
+                        <option value="DKK">DKK</option>
+                        <option value="HKD">HKD</option>
+                        <option value="HUF">HUF</option>
+                        <option value="IDR">IDR</option>
+                        <option value="ILS">ILS</option>
+                        <option value="ISK">ISK</option>
+                        <option value="KRW">KRW</option>
+                    </select>
+                    <button id="convert-btn" disabled>Convert</button>
+                </div>
+                <p id="convert-result" class="convert-result"></p>
+            </div>
+        </div>
+
         <div id="loading" class="loading">Loading...</div>
-        <div id="rates-container"></div>
+
+        <div class="section-group">
+            <div class="filter-sort-group" id="filter-sort-group" style="display:none;">
+                <div class="filter-box">
+                    <label for="filter-input">Filter</label>
+                    <input type="text" id="filter-input" placeholder="Search currency or country...">
+                </div>
+                <div class="sort-box">
+                    <label for="sort-select">Sort</label>
+                    <select id="sort-select">
+                        <option value="desc">Highest Rate</option>
+                        <option value="asc">Lowest Rate</option>
+                    </select>
+                </div>
+                <div class="show-box">
+                    <label for="show-select">Show</label>
+                    <select id="show-select">
+                        <option value="5">Top 5</option>
+                        <option value="10">Top 10</option>
+                        <option value="all">All</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="rates-container" class="section-group"></div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
